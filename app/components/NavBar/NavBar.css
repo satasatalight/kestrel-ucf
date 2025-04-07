@@ -1,0 +1,31 @@
+.Nav-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.space ul {
+  display: flex;
+  gap: 5rem; /* Adds space between buttons */
+  list-style: none;
+}
+
+.btn-navbar {
+  display: inline;
+  color: rgb(181, 151, 90);
+  font-size: 1.2rem;
+  font-weight: 600;
+  list-style-type: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-shadow: 0.5px 0px rgb(109, 98, 98);
+  transition: color 0.3s ease;
+  opacity: 100%;
+}
+
+.btn-navbar:hover {
+  cursor: pointer;
+  color: rgb(239, 191, 95);
+  text-shadow: 1px 1px 10px rgb(239, 191, 95);
+}
