@@ -20,7 +20,7 @@ const AboutPage = () => {
         autonomous systems.
       </div>
       <section className="flex flex-row gap-20 items-center justify-center pt-8 w-full">
-        <div className="w-78 flex flex-col border-4 h-120 shadow-neutral-600 shadow-2xl overflow-y-hidden border-gray-700">
+        <div className="w-78 flex flex-col border-4 h-120 shadow-neutral-600 shadow-2xl overflow-y-hidden border-gray-700 rounded-2xl">
           <img
             className="h-1/3 border-b-3 border-b-gray-800"
             src="FlyingDrone.jpg"
@@ -29,7 +29,7 @@ const AboutPage = () => {
             <h1 className="text-2xl text-center text-neutral-900">
               Hardware Team
             </h1>
-            <p className="flex justify-center text-center pt-4 text-black">
+            <p className="flex justify-center text-center pt-4 text-black text-sm">
               The Hardware Team underpins Kestrel's stability and
               responsiveness, designing and implementing the electronic systems
               that allow seamless integration with software logic. They are
@@ -46,7 +46,7 @@ const AboutPage = () => {
             </p>
           </div>
         </div>
-        <div className="w-78 flex flex-col border-4 h-120 shadow-neutral-600 shadow-2xl overflow-y-hidden border-gray-700">
+        <div className="w-78 flex flex-col border-4 h-120 shadow-neutral-600 shadow-2xl overflow-y-hidden border-gray-700 rounded-2xl">
           <img
             className="h-1/3 border-b-3 border-b-gray-800"
             src="FlyingDrone.jpg"
@@ -55,7 +55,7 @@ const AboutPage = () => {
             <h1 className="text-2xl text-center text-neutral-900">
               Software Team
             </h1>
-            <p className="flex justify-center text-center pt-4 text-black">
+            <p className="flex justify-center text-center pt-4 text-black text-sm">
               The Software Team drives the intelligence behind Kestrel by
               developing and integrating machine learning models and autonomous
               flight logic. Collaborating closely with the Hardware Team, they
@@ -73,14 +73,14 @@ const AboutPage = () => {
             </p>
           </div>
         </div>
-        <div className="w-78 flex flex-col border-4 h-120 shadow-neutral-600 shadow-2xl overflow-y-hidden border-gray-700">
+        <div className="w-78 flex flex-col border-4 h-120 shadow-neutral-600 shadow-2xl overflow-y-hidden border-gray-700 rounded-2xl">
           <img
             className="h-1/3 border-b-3 border-b-gray-800"
             src="FlyingDrone.jpg"
           ></img>
           <div className="w-full h-full bg-amber-50">
             <h1 className="text-2xl text-center text-neutral-900">Research</h1>
-            <p className="flex justify-center text-center pt-4 text-black">
+            <p className="flex justify-center text-center pt-4 text-black text-sm">
               Our research focuses on object tracking, deep learning, obstacle
               avoidance, and flight path optimization. By experimenting with
               neural networks and decision-making algorithms, we aim to improve
