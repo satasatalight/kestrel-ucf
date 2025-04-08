@@ -10,11 +10,12 @@ export const createDevlogSchema = z.object({
 
   description: z
     .string()
-    .min(20, { message: "Description must be at least 20 characters long" })
+    .min(10, { message: "Description must be at least 10 characters long" })
     .max(1000, { message: "Description must be at most 1000 characters long" }),
 
   videoUrl: z.string().optional(),
   photoUrl: z.string().optional(),
+  password: z.string().nullable().optional(),
 });
 
 // Patch schema: allows any subset of the fields to be updated.
@@ -27,12 +28,13 @@ export const patchDevlogSchema = z.object({
 
   description: z
     .string()
-    .min(20, { message: "Description must be at least 20 characters long" })
+    .min(10, { message: "Description must be at least 10 characters long" })
     .max(1000, { message: "Description must be at most 1000 characters long" })
     .optional(),
 
   videoUrl: z.string().optional(),
   photoUrl: z.string().optional(),
+  password: z.string().nullable().optional(),
 });
 
 export const schemaIdInput = z.object({

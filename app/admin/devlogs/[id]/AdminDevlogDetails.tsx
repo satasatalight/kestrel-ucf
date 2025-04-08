@@ -11,18 +11,26 @@ import { z } from "zod";
 import AdminDeleteConfirmDialog from "../_components/AdminDeleteConfirmDialog";
 import axios from "axios";
 import { toast } from "sonner";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import AdminDevlogForm from "../_components/AdminDevlogForm";
 import { Form } from "@/components/ui/form";
+import {
+  getPassword,
+  getPayloadWithPassword,
+} from "@/app/api/devlogs/passwordManager";
 
 type DevlogForm = z.infer<typeof patchDevlogSchema>;
 
 const AdminDevlogDetails = ({ devlog }: { devlog: Devlog }) => {
   const router = useRouter();
+  const params = useSearchParams();
 
   const onSubmit = async (data: DevlogForm) => {
     try {
-      const response = await axios.patch(`/api/devlogs/${devlog.id}`, data);
+      const response = await axios.patch(
+        `/api/devlogs/${devlog.id}`,
+        getPayloadWithPassword(params, data)
+      );
       if (response.status === 200) {
         toast.success("Devlog updated successfully!");
         router.push("/admin/devlogs");
@@ -42,7 +50,9 @@ const AdminDevlogDetails = ({ devlog }: { devlog: Devlog }) => {
 
   const handleDelete = async () => {
     try {
-      const response = await axios.delete(`/api/devlogs/${devlog.id}`);
+      const response = await axios.delete(
+        `/api/devlogs/${devlog.id}?pwd=${getPassword(params)}`
+      );
       if (response.status === 200) {
         toast.success("Devlog deleted successfully!");
         router.push("/admin/devlogs");

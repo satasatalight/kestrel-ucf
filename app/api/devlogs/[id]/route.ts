@@ -37,6 +37,12 @@ export async function PATCH(
     return NextResponse.json(devlogValidation.error.errors, { status: 400 });
   }
 
+  const password = body.password;
+  const secretPassword = process.env.ADMIN_PWD;
+  if (password !== secretPassword) {
+    return NextResponse.json({ error: "Invalid password" }, { status: 403 });
+  }
+
   // Update the devlog with the provided fields
   try {
     const updatedDevlog = await prisma.devlog.update({
@@ -67,6 +73,13 @@ export async function DELETE(
   const idValidation = schemaIdInput.safeParse({ id: devlogId });
   if (!idValidation.success) {
     return NextResponse.json(idValidation.error.errors, { status: 400 });
+  }
+
+  const { searchParams } = new URL(request.url);
+  const password = searchParams.get("pwd");
+  const secretPassword = process.env.ADMIN_PWD;
+  if (password !== secretPassword) {
+    return NextResponse.json({ error: "Invalid password" }, { status: 403 });
   }
 
   // Directly delete the devlog entry. (Remove any dependency checks if they don't apply.)

@@ -14,18 +14,23 @@ import { z } from "zod";
 import AdminDeleteConfirmDialog from "../_components/AdminDeleteConfirmDialog";
 import axios from "axios";
 import { toast } from "sonner";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import AdminDevlogForm from "../_components/AdminDevlogForm";
 import { Form } from "@/components/ui/form";
+import { getPayloadWithPassword } from "@/app/api/devlogs/passwordManager";
 
 type DevlogForm = z.infer<typeof createDevlogSchema>;
 
 const AdminDevlogNewDetails = () => {
   const router = useRouter();
+  const params = useSearchParams();
 
   const onSubmit = async (data: DevlogForm) => {
     try {
-      const response = await axios.post(`/api/devlogs/`, data);
+      const response = await axios.post(
+        `/api/devlogs/`,
+        getPayloadWithPassword(params, data)
+      );
       if (response.status === 201) {
         toast.success("Devlog created successfully!");
         router.push("/admin/devlogs");

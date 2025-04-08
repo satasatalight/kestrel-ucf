@@ -16,6 +16,12 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(result.error.errors, { status: 400 });
   }
 
+  const password = body.password;
+  const secretPassword = process.env.ADMIN_PWD;
+  if (password !== secretPassword) {
+    return NextResponse.json({ error: "Invalid password" }, { status: 403 });
+  }
+
   try {
     const newDevlog = await prisma.devlog.create({
       data: {

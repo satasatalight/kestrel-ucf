@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 
 interface Props {
@@ -7,7 +6,16 @@ interface Props {
 
 const PhotoView = ({ photoUrl }: Props) => {
   if (!photoUrl) return null;
-  return <Image src={photoUrl} alt="devlog photo" />;
+
+  return (
+    <div className="w-full h-auto">
+      <img
+        src={photoUrl}
+        alt="devlog photo"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  );
 };
 
 export default PhotoView;
