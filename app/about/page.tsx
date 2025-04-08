@@ -58,6 +58,8 @@ const AboutPage = () => {
       <div className="pt-[80px] text-5xl font-bold text-center text-neutral-200 font-mono">
         About Kestrel
       </div>
+
+      {/* Description */}
       <div className="text-amber-50 pt-6 text-center font-serif justify-center w-2/3 items-center m-auto">
         Kestrel is an autonomous videography drone initiative developed by
         student teams within several student ran clubs at UCF. Kestrel's focus
@@ -69,6 +71,8 @@ const AboutPage = () => {
         comprehensive platform for learning, research, and innovation in
         autonomous systems.
       </div>
+
+      {/* Card */}
       <div className="flex w-full justify-center items-center">
         <div className="flex flex-row gap-20 justify-center pt-8 max-w-5xl">
           {cards.map((card) => (

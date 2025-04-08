@@ -18,10 +18,10 @@ import {
 
 const AboutCard = ({ title, description, image }: AboutCardProps) => {
   return (
-    <Card className="w-full h-fit bg-slate-600 border-slate-700">
+    <Card className="w-full h-fit bg-slate-600 border-slate-700 hover:scale-102 hover:shadow-xl">
       <CardHeader>
         <Image
-          className="rounded-lg mb-4 shadow-md hover:scale-102 transition-all duration-300"
+          className="rounded-lg mb-4 shadow-md transition-all duration-300"
           src={image}
           alt={title}
         />
