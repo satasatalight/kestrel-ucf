@@ -18,11 +18,7 @@ const DevlogEditPage = async (props: Props) => {
     return notFound();
   }
 
-  return (
-    <div className="w-full h-full flex justify-center items-center">
-      <AdminDevlogDetails devlog={devlog} />
-    </div>
-  );
+  return <AdminDevlogDetails devlog={devlog} />;
 };
 
 export default DevlogEditPage;

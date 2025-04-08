@@ -1,6 +1,9 @@
 "use client";
 
-import { patchDevlogSchema } from "@/app/api/validationSchemas";
+import {
+  createDevlogSchema,
+  patchDevlogSchema,
+} from "@/app/api/validationSchemas";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -15,17 +18,17 @@ import { useRouter } from "next/navigation";
 import AdminDevlogForm from "../_components/AdminDevlogForm";
 import { Form } from "@/components/ui/form";
 
-type DevlogForm = z.infer<typeof patchDevlogSchema>;
+type DevlogForm = z.infer<typeof createDevlogSchema>;
 
-const AdminDevlogDetails = ({ devlog }: { devlog: Devlog }) => {
+const AdminDevlogNewDetails = () => {
   const router = useRouter();
 
   const onSubmit = async (data: DevlogForm) => {
     try {
-      const response = await axios.patch(`/api/devlogs/${devlog.id}`, data);
-      if (response.status === 200) {
-        toast.success("Devlog updated successfully!");
-        router.push("/admin");
+      const response = await axios.post(`/api/devlogs/`, data);
+      if (response.status === 201) {
+        toast.success("Devlog created successfully!");
+        router.push("/admin/devlogs");
         router.refresh();
       }
     } catch (error: unknown) {
@@ -40,50 +43,26 @@ const AdminDevlogDetails = ({ devlog }: { devlog: Devlog }) => {
     }
   };
 
-  const handleDelete = async () => {
-    try {
-      const response = await axios.delete(`/api/devlogs/${devlog.id}`);
-      if (response.status === 200) {
-        toast.success("Devlog deleted successfully!");
-        router.push("/admin");
-        router.refresh();
-      }
-    } catch (error: unknown) {
-      const errorMsg = axios.isAxiosError(error)
-        ? error.response?.data?.error ||
-          error.response?.data?.message ||
-          error.message
-        : error instanceof Error
-        ? error.message
-        : "An unknown error occurred.";
-      toast.error("Failed to delete devlog", { description: errorMsg });
-    }
-  };
-
   const form = useForm<DevlogForm>({
-    resolver: zodResolver(patchDevlogSchema),
+    resolver: zodResolver(createDevlogSchema),
     defaultValues: {
-      title: devlog.title,
-      description: devlog.description,
-      videoUrl: devlog.videoUrl || "",
-      photoUrl: devlog.photoUrl || "",
+      title: "",
+      description: "",
+      videoUrl: "",
+      photoUrl: "",
     },
   });
 
   return (
     <Card className="w-xl mx-auto mt-8">
       <CardContent>
-        <h2 className="text-xl font-bold my-4">Edit Devlog</h2>
+        <h2 className="text-xl font-bold my-4">Create Devlog</h2>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <AdminDevlogForm<DevlogForm> form={form} />
 
             <div className="flex justify-between items-center">
-              <Button type="submit">Update Devlog</Button>
-              <AdminDeleteConfirmDialog
-                handleDelete={handleDelete}
-                name="devlog"
-              />
+              <Button type="submit">Create Devlog</Button>
             </div>
           </form>
         </Form>
@@ -92,4 +71,4 @@ const AdminDevlogDetails = ({ devlog }: { devlog: Devlog }) => {
   );
 };
 
-export default AdminDevlogDetails;
+export default AdminDevlogNewDetails;
