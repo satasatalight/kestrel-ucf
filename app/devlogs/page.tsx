@@ -7,8 +7,10 @@ const DevlogsPage = async () => {
   return (
     <div className="mt-12 bg-white h-full">
       <div className="flex flex-col items-center w-full h-full pt-8 gap-4">
-        <div className="text-2xl text-black">DevlogsPage</div>
-        <div className="flex flex-col gap-4 text-green-600">
+        <div className="text-4xl text-black font-semibold">
+          Kestrel Project Devlogs
+        </div>
+        <div className="flex flex-col gap-4 text-primary">
           {devlogs.map((devlog) => (
             <DevlogCard devlog={devlog} key={devlog.id} />
           ))}
