@@ -31,25 +31,25 @@ const NavBarLink = ({ label, href, isNewWindow }: Props) => {
         {isOpen && (
           <div className="absolute top-full mt-0 bg-neutral-800/80 text-white -left-3 rounded-b-md">
             <Link
-              href="/hardware"
+              href="/sensors"
               className="block px-4 py-2 hover:bg-neutral-900/80"
             >
               Sensors
             </Link>
             <Link
-              href="/software"
+              href="/pathing"
               className="block px-4 py-2 hover:bg-neutral-900/80"
             >
               Pathing
             </Link>
             <Link
-              href="/research"
+              href="/ardupilot"
               className="block px-4 py-2 hover:bg-neutral-900/80"
             >
               Ardupilot
             </Link>
             <Link
-              href="/research"
+              href="/model"
               className="block px-4 py-2 hover:bg-neutral-900/80"
             >
               Model
