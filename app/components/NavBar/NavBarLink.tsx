@@ -1,16 +1,13 @@
-// app/components/NavBarLink.tsx
-
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface Props {
   label: string;
