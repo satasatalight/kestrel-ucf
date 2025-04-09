@@ -61,7 +61,7 @@ const DevlogCard = ({ devlog }: Props) => {
               <span className="ml-1"></span>
               <button
                 onClick={toggleDescription}
-                className="text-blue-500 text-sm"
+                className="text-blue-500 text-sm cursor-pointer"
               >
                 {isExpanded ? "Show less" : "Read More"}
               </button>
