@@ -21,4 +21,6 @@ const AdminDevlogPage = async () => {
   );
 };
 
+export const dynamic = "force-dynamic";
+
 export default AdminDevlogPage;

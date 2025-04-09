@@ -1,14 +1,13 @@
-import { Devlog } from "@prisma/client";
-import VideoView from "./VideoView";
-import PhotoView from "./PhotoView";
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Devlog } from "@prisma/client";
+import PhotoView from "./PhotoView";
+import VideoView from "./VideoView";
 
 interface Props {
   devlog: Devlog;

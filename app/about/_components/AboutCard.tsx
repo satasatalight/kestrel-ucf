@@ -1,5 +1,4 @@
 import Image, { StaticImageData } from "next/image";
-import React from "react";
 
 export interface AboutCardProps {
   title: string;
@@ -11,7 +10,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";

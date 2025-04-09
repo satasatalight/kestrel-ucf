@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
       },
     });
     return NextResponse.json(newDevlog, { status: 201 });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Error creating video." },
       { status: 500 }

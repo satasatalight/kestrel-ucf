@@ -21,4 +21,6 @@ const DevlogEditPage = async (props: Props) => {
   return <AdminDevlogDetails devlog={devlog} />;
 };
 
+export const dynamic = "force-dynamic";
+
 export default DevlogEditPage;

@@ -35,7 +35,7 @@ export function getPassword(searchParams: URLSearchParams): string | null {
 
 export function getPayloadWithPassword(
   searchParams: URLSearchParams,
-  payload: Object
+  payload: object
 ) {
   return { ...payload, password: getPassword(searchParams) };
 }

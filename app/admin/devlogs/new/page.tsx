@@ -1,8 +1,14 @@
-import React from "react";
+import React, { Suspense } from "react";
 import AdminDevlogNewDetails from "./AdminDevlogNewDetails";
 
 const AdminDevlogNewPage = () => {
-  return <AdminDevlogNewDetails />;
+  return (
+    <Suspense>
+      <AdminDevlogNewDetails />
+    </Suspense>
+  );
 };
+
+export const dynamic = "force-dynamic";
 
 export default AdminDevlogNewPage;
