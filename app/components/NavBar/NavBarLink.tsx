@@ -1,66 +1,65 @@
+// app/components/NavBarLink.tsx
+
 "use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface Props {
   label: string;
-  href: string; // ✅ Add this line to allow optional external links
+  href: string; // Internal or external link
   isNewWindow?: boolean;
 }
 
 const NavBarLink = ({ label, href, isNewWindow }: Props) => {
   const pathname = usePathname();
   const isActive = pathname === `/${label.toLowerCase()}`;
-  const [isOpen, setIsOpen] = useState(false);
-
   const baseClasses =
-    "inline text-white hover:opacity-100 hover:underline text-xl font-semibold transition ";
+    "text-white hover:opacity-100 hover:underline text-xl font-semibold transition";
   const activeClass = isActive ? "opacity-100 underline" : "opacity-75";
 
-  // 👉 If label is "Teams", return dropdown menu
+  // Use shadcn dropdown for "Teams"
   if (label.toLowerCase() === "teams") {
     return (
-      <div
-        className="relative group"
-        onMouseEnter={() => setIsOpen(true)}
-        onMouseLeave={() => setIsOpen(false)}
-      >
-        <button className={baseClasses + activeClass}>{label}</button>
-        {isOpen && (
-          <div className="absolute top-full mt-0 bg-neutral-800/80 text-white -left-3 rounded-b-md">
-            <Link
-              href="/sensors"
-              className="block px-4 py-2 hover:bg-neutral-900/80"
-            >
-              Sensors
-            </Link>
-            <Link
-              href="/pathing"
-              className="block px-4 py-2 hover:bg-neutral-900/80"
-            >
-              Pathing
-            </Link>
-            <Link
-              href="/ardupilot"
-              className="block px-4 py-2 hover:bg-neutral-900/80"
-            >
-              Ardupilot
-            </Link>
-            <Link
-              href="/model"
-              className="block px-4 py-2 hover:bg-neutral-900/80"
-            >
-              Model
-            </Link>
-          </div>
-        )}
-      </div>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <button className={baseClasses + activeClass}>{label}</button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent
+          align="start" // adjust alignment as needed
+          className="z-9999"
+        >
+          <DropdownMenuItem asChild>
+            <Link href="/sensors">Sensors</Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href="/pathing">Pathing</Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href="/ardupilot">Ardupilot</Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href="/model">Model</Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href="/leadership">Leadership</Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href="/website">Website</Link>
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
     );
   }
 
-  // Internal link using <Link>
+  // For normal links, use Next.js <Link>
   return (
     <Link
       href={href}
