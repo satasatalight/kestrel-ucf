@@ -31,22 +31,6 @@ const AboutCard = ({ title, description, image }: AboutCardProps) => {
       <CardContent></CardContent>
     </Card>
   );
-
-  return (
-    <div className="w-78 flex flex-col border-4 h-120 shadow-neutral-600 shadow-2xl overflow-y-hidden border-gray-700 rounded-2xl">
-      <Image
-        className="h-1/3 border-b-3 border-b-gray-800"
-        src={image}
-        alt={title}
-      />
-      <div className="w-full h-full bg-[red]">
-        <h1 className="text-2xl text-center text-neutral-900">{title}</h1>
-        <p className="flex justify-center text-center pt-4 text-black text-sm">
-          {description}
-        </p>
-      </div>
-    </div>
-  );
 };
 
 export default AboutCard;
