@@ -27,29 +27,35 @@ const NavBarLink = ({ label, href, isNewWindow }: Props) => {
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
       >
-        <button className={baseClasses + activeClass}>{label}</button>
+
+        {/* Clickable Link to /temas */}
+        <Link href = "/teams" className = {baseClasses + activeClass}>
+          {label}
+        </Link>
+
+        {/* <button className={baseClasses + activeClass}>{label}</button> */}
         {isOpen && (
           <div className="absolute top-full mt-0 bg-neutral-800/80 text-white -left-3 rounded-b-md">
             <Link
-              href="/sensors"
+              href="/team/sensors"
               className="block px-4 py-2 hover:bg-neutral-900/80"
             >
               Sensors
             </Link>
             <Link
-              href="/pathing"
+              href="/team/pathing"
               className="block px-4 py-2 hover:bg-neutral-900/80"
             >
               Pathing
             </Link>
             <Link
-              href="/ardupilot"
+              href="/team/ardupilot"
               className="block px-4 py-2 hover:bg-neutral-900/80"
             >
               Ardupilot
             </Link>
             <Link
-              href="/model"
+              href="/team/model"
               className="block px-4 py-2 hover:bg-neutral-900/80"
             >
               Model
