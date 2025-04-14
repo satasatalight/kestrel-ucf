@@ -1,3 +1,44 @@
+# Kestrel UCF
+
+Welcome to **Kestrel UCF** — an autonomous videography drone initiative developed by student-led clubs at the University of Central Florida. This project aims to push the boundaries of aerial robotics by integrating intelligent computing systems into real-time drone flight and video capture.
+
+---
+
+## Overview
+
+Kestrel is a cross-disciplinary initiative that merges the fields of:
+
+- Autonomous Robotics  
+- High-Quality Aerial Videography  
+- Embedded Intelligence & Real-Time Computing  
+- Student Innovation & Collaboration  
+
+Built using modern web technologies, this website serves as the central hub for information, updates, and team contributions.
+
+---
+
+## Tech Stack
+
+- **Frontend**: [Next.js](https://nextjs.org/) with [Tailwind CSS](https://tailwindcss.com/)  
+- **Languages**: TypeScript  
+- **Styling**: Custom components and utility-first Tailwind classes  
+- **Hosting**: TBD (e.g. Vercel, GitHub Pages)  
+
+---
+
+## Project Structure
+
+```bash
+app/
+├── about/           # About page and content
+├── admin/           # Admin interface or tooling (WIP)
+├── components/      # Reusable components like NavBar, Pilot, etc.
+├── devlogs/         # Dev log structure and schema
+├── layout.tsx       # Shared layout and navigation
+├── page.tsx         # Homepage routing
+├── api/             # API routes (e.g., validation, hooks)
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
