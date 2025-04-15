@@ -3,6 +3,7 @@ import Pilot from "./components/Pilot/Pilot";
 const HomePage = () => {
   return (
     <div className="h-full relative">
+      {/* Hello */}
       <video
         muted
         loop
