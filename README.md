@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kestrel UCF
+
+Welcome to Kestrel UCF — a student-led project at the University of Central Florida focused on building an autonomous videography drone. Our goal is to combine aerial robotics with artificial intelligence to capture real-time footage and push the limits of modern drone technology.
+
+## Overview
+
+Kestrel is a cross-disciplinary initiative that brings together:
+
+- Autonomous robotics  
+- Aerial videography & drone imaging  
+- Embedded systems & real-time processing  
+- Student-driven design & collaboration  
+
+This site is built using modern web technologies and serves as our central hub for updates, documentation, and team contributions.
+
+## Tech Stack
+
+- Framework: https://nextjs.org/  
+- Languages: TypeScript, JavaScript, CSS  
+- Styling: Tailwind CSS with utility-first custom components  
+- Hosting: TBD (likely Vercel or GitHub Pages)
+
+## Project Structure
+
+```
+app/
+├── about/           # About page and content
+├── admin/           # Admin tooling (WIP)
+├── components/      # Shared UI components (NavBar, Pilot, etc.)
+├── devlogs/         # Devlog schema and pages
+├── layout.tsx       # Global layout
+├── page.tsx         # Homepage
+├── api/             # API routes
+```
+
+This project was bootstrapped with: https://nextjs.org/docs/app/api-reference/cli/create-next-app
 
 ## Getting Started
 
-First, run the development server:
+To run the development server locally:
 
-```bash
+```
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000 in your browser to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can start editing the homepage at `app/page.tsx`. Changes will reflect automatically.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Contributing
 
-## Learn More
+If you're part of the Kestrel team:
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repo:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+git clone https://github.com/KestrelWebsite/kestrel-ucf.git
+cd kestrel-ucf
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Create a branch and make your changes:
 
-## Deploy on Vercel
+```
+git checkout -b feature/my-feature
+git add .
+git commit -m "Add my feature"
+git push origin feature/my-feature
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Open a pull request to the `main` branch on GitHub.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+New contributors should reach out to a project lead for access or guidance.
+
+## Deployment
+
+We're planning to host the site on Vercel: https://vercel.com/  
+Hosting setup is still in progress.
+
+## Built By
+
+Kestrel is designed and developed by a group of UCF students across robotics, engineering, and computer science clubs. We’re learning as we go and collaborating to create something we’re proud of.
+
+## Resources
+
+If you’re new to our tech stack, here are some useful links:
+
+- Next.js Docs: https://nextjs.org/docs  
+- Tailwind CSS Docs: https://tailwindcss.com/docs  
+- Learn Next.js: https://nextjs.org/learn  
+- TypeScript Docs: https://www.typescriptlang.org/docs/
+
+## License
+
+All code, assets, and content are the intellectual property of the Kestrel UCF team.  
+Please don’t use or distribute without permission.
