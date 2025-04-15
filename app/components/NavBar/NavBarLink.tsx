@@ -27,7 +27,13 @@ const NavBarLink = ({ label, href, isNewWindow }: Props) => {
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <button className={baseClasses + activeClass}>{label}</button>
+          {/* Clicking this now goes to /teams */}
+          <Link
+            href="/teams"
+            className={baseClasses + activeClass}
+          >
+            {label}
+          </Link>
         </DropdownMenuTrigger>
         <DropdownMenuContent
           align="start" // adjust alignment as needed
