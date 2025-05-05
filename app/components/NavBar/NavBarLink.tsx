@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 interface Props {
   label: string;
@@ -21,6 +22,7 @@ const NavBarLink = ({ label, href, isNewWindow }: Props) => {
   const baseClasses =
     "text-white hover:opacity-100 hover:underline text-xl font-semibold transition";
   const activeClass = isActive ? "opacity-100 underline" : "opacity-75";
+  const [isOpen, setIsOpen] = useState(false);
 
   // Use shadcn dropdown for "Teams"
   if (label.toLowerCase() === "teams") {
