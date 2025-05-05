@@ -11,7 +11,7 @@ export const createDevlogSchema = z.object({
   description: z
     .string()
     .min(10, { message: "Description must be at least 10 characters long" })
-    .max(1000, { message: "Description must be at most 1000 characters long" }),
+    .max(5000, { message: "Description must be at most 5000 characters long" }),
 
   videoUrl: z.string().optional(),
   photoUrl: z.string().optional(),
@@ -29,7 +29,7 @@ export const patchDevlogSchema = z.object({
   description: z
     .string()
     .min(10, { message: "Description must be at least 10 characters long" })
-    .max(1000, { message: "Description must be at most 1000 characters long" })
+    .max(5000, { message: "Description must be at most 5000 characters long" })
     .optional(),
 
   videoUrl: z.string().optional(),

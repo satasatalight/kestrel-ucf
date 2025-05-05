@@ -1,32 +1,48 @@
-import { Devlog } from "@prisma/client";
-import VideoView from "./VideoView";
-import PhotoView from "./PhotoView";
+"use client";
+
+import { useState } from "react";
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Devlog } from "@prisma/client";
+import PhotoView from "./PhotoView";
+import VideoView from "./VideoView";
 
 interface Props {
   devlog: Devlog;
 }
 
 function formatCreatedAt(createdAt: Date | string): string {
-  // Convert the input to a Date object if it isn't already
   const date = createdAt instanceof Date ? createdAt : new Date(createdAt);
-
-  // Extract day, month, and year from the date
   const day = date.getDate();
   const month = date.toLocaleString("default", { month: "long" });
   const year = date.getFullYear();
-
   return `${day} ${month}, ${year}`;
 }
 
+const MAX_CHARS = 200;
+
 const DevlogCard = ({ devlog }: Props) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  // Check if the description exceeds the maximum characters allowed.
+  const isTruncatable = devlog.description.length > MAX_CHARS;
+
+  // Compute the text to display.
+  const displayText =
+    !isTruncatable || isExpanded
+      ? devlog.description
+      : devlog.description.substring(0, MAX_CHARS) + "...";
+
+  // Toggle function for the button.
+  const toggleDescription = () => {
+    setIsExpanded((prev) => !prev);
+  };
+
   return (
     <Card className="w-xl">
       <CardHeader>
@@ -38,7 +54,20 @@ const DevlogCard = ({ devlog }: Props) => {
             </div>
           </div>
         </CardTitle>
-        <CardDescription>{devlog.description}</CardDescription>
+        <CardDescription>
+          {displayText}
+          {isTruncatable && (
+            <>
+              <span className="ml-1"></span>
+              <button
+                onClick={toggleDescription}
+                className="text-blue-500 text-sm cursor-pointer"
+              >
+                {isExpanded ? "Show less" : "Read More"}
+              </button>
+            </>
+          )}
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="flex flex-col gap-4">

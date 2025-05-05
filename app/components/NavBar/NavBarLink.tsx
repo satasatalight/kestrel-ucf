@@ -12,7 +12,7 @@ import { usePathname } from "next/navigation";
 interface Props {
   label: string;
   href: string; // Internal or external link
-  isNewWindow?: boolean;
+  isNewWindow?: boolean; // test
 }
 
 const NavBarLink = ({ label, href, isNewWindow }: Props) => {
@@ -25,35 +25,40 @@ const NavBarLink = ({ label, href, isNewWindow }: Props) => {
   // Use shadcn dropdown for "Teams"
   if (label.toLowerCase() === "teams") {
     return (
-<<<<<<< Updated upstream
       <div
         className="relative group"
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
       >
-        <button className={baseClasses + activeClass}>{label}</button>
+
+        {/* Clickable Link to /temas */}
+        <Link href = "/teams" className = {baseClasses + activeClass}>
+          {label}
+        </Link>
+
+        {/* <button className={baseClasses + activeClass}>{label}</button> */}
         {isOpen && (
           <div className="absolute top-full mt-0 bg-neutral-800/80 text-white -left-3 rounded-b-md">
             <Link
-              href="/sensors"
+              href="/team/sensors"
               className="block px-4 py-2 hover:bg-neutral-900/80"
             >
               Sensors
             </Link>
             <Link
-              href="/pathing"
+              href="/team/pathing"
               className="block px-4 py-2 hover:bg-neutral-900/80"
             >
               Pathing
             </Link>
             <Link
-              href="/ardupilot"
+              href="/team/ardupilot"
               className="block px-4 py-2 hover:bg-neutral-900/80"
             >
               Ardupilot
             </Link>
             <Link
-              href="/model"
+              href="/team/model"
               className="block px-4 py-2 hover:bg-neutral-900/80"
             >
               Model
@@ -61,43 +66,6 @@ const NavBarLink = ({ label, href, isNewWindow }: Props) => {
           </div>
         )}
       </div>
-=======
-      <DropdownMenu>
-        {/* <DropdownMenuTrigger asChild>
-          <button className={baseClasses + activeClass}>{label}</button>
-        </DropdownMenuTrigger> */}
-        {/* Clicking this now goes to /teams */}
-        <Link
-          href="/teams"
-          className={baseClasses + activeClass}
-        >
-          {label}
-        </Link>
-        <DropdownMenuContent
-          align="start" // adjust alignment as needed
-          className="z-9999"
-        >
-          <DropdownMenuItem asChild>
-            <Link href="/sensors">Sensors</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Link href="/pathing">Pathing</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Link href="/ardupilot">Ardupilot</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Link href="/model">Model</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Link href="/leadership">Leadership</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Link href="/website">Website</Link>
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
->>>>>>> Stashed changes
     );
   }
 

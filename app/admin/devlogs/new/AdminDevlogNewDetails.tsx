@@ -1,23 +1,17 @@
 "use client";
 
-import {
-  createDevlogSchema,
-  patchDevlogSchema,
-} from "@/app/api/validationSchemas";
+import { getPayloadWithPassword } from "@/app/api/devlogs/passwordManager";
+import { createDevlogSchema } from "@/app/api/validationSchemas";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Devlog } from "@prisma/client";
-import React from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import AdminDeleteConfirmDialog from "../_components/AdminDeleteConfirmDialog";
-import axios from "axios";
-import { toast } from "sonner";
-import { useRouter, useSearchParams } from "next/navigation";
-import AdminDevlogForm from "../_components/AdminDevlogForm";
 import { Form } from "@/components/ui/form";
-import { getPayloadWithPassword } from "@/app/api/devlogs/passwordManager";
+import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+import { z } from "zod";
+import AdminDevlogForm from "../_components/AdminDevlogForm";
 
 type DevlogForm = z.infer<typeof createDevlogSchema>;
 
