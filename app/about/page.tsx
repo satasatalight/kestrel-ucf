@@ -35,7 +35,7 @@ const AboutPage = () => {
 
   return (
     <div className="h-fit w-full bg-gradient-to-t from-slate-700 to-slate-900">
-      <div className="pt-[80px] text-5xl font-bold text-center text-neutral-200 font-mono">
+      <div className="pt-20 text-5xl font-bold text-center text-neutral-200 font-mono">
         About Kestrel
       </div>
       <div className="text-amber-50 pt-6 text-center font-serif justify-center w-2/3 items-center m-auto">

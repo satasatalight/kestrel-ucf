@@ -6,6 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -24,41 +25,45 @@ const NavBarLink = ({ label, href, isNewWindow }: Props) => {
 
   // Use shadcn dropdown for "Teams"
   if (label.toLowerCase() === "teams") {
+    let [open, setOpen] = useState(false);
+
     return (
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          {/* Clicking this now goes to /teams */}
-          <Link
-            href="/teams"
-            className={baseClasses + activeClass}
+      <div onMouseOver={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+        <DropdownMenu open={open}>
+          <DropdownMenuTrigger asChild>
+            {/* Clicking this now goes to /teams */}
+            <Link
+              href="/teams"
+              className={baseClasses + activeClass}
+            >
+              {label}
+            </Link>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent
+            align="start" // adjust alignment as needed
+            className="z-9999"
           >
-            {label}
-          </Link>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent
-          align="start" // adjust alignment as needed
-          className="z-9999"
-        >
-          <DropdownMenuItem asChild>
-            <Link href="/sensors">Sensors</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Link href="/pathing">Pathing</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Link href="/ardupilot">Ardupilot</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Link href="/model">Model</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Link href="/leadership">Leadership</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Link href="/website">Website</Link>
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+            <DropdownMenuItem asChild>
+              <Link href="/teams/sensors">Sensors</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href="/teams/pathing">Pathing</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href="/teams/ardupilot">Ardupilot</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href="/teams/model">Model</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href="/teams/leadership">Leadership</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href="/teams/website">Website</Link>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
     );
   }
 
