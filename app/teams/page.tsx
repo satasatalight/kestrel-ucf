@@ -42,7 +42,7 @@ const TeamsPage = () => {
     }
   ]
 
-  return <div className="bg-linear-to-t from-purple-900 to-fuchsia-950 text-center text-neutral-200">
+  return <div className="bg-linear-to-t from-purple-900 to-fuchsia-950 text-center text-neutral-200 h-[100vh]">
       <h1 className="pt-20 text-5xl font-bold font-mono">
         Kestrel's Teams
       </h1>

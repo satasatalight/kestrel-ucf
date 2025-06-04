@@ -43,7 +43,7 @@ const SensorsTeamPage = () => {
     },
   ];
 
-  return <div className="bg-linear-to-t from-purple-900 to-fuchsia-950 text-neutral-200">
+  return <div className="bg-linear-to-t from-purple-900 to-fuchsia-950 text-neutral-200 h-[100vh]">
     <h1 className="pt-20 text-5xl text-center font-bold font-mono">
       Kestrel's Sensors Team
     </h1>
