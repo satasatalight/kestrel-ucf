@@ -3,6 +3,7 @@ import placeholder from "@/public/ArduinoBoard.png";
 import MemberCard, { MemberCardProps } from "../_components/MemberCard";
 
 const SensorsTeamPage = () => {
+  // placeholder data
   const members: MemberCardProps[] = [
     {
       name: "name1",
@@ -12,11 +13,11 @@ const SensorsTeamPage = () => {
       links: [
         {
           type: "cover_letter",
-          href: "./"
+          href: "iorhgirhgi"
         },
         {
           type: "github",
-          href: "./"
+          href: "https://github.com"
         }
       ]
     },
@@ -28,11 +29,15 @@ const SensorsTeamPage = () => {
       links: [
         {
           type: "linkedin",
-          href: "./"
+          href: "https://linkedin.com"
         },
         {
           type: "resume",
-          href: "./"
+          href: "resumeresume"
+        },
+        {
+          type: "misc link",
+          href: "uihiuhuihoihoihih"
         }
       ]
     },
@@ -57,10 +62,9 @@ const SensorsTeamPage = () => {
       <h2 className="pt-10 text-3xl font-light font-mono">Team Members:</h2>
       <div className="flex justify-center items-center mx-3">
         <div className="flex flex-wrap w-full pt-6 pb-15 gap-6">
-          {members.map((member) => {
-
-            return <MemberCard key={member.name} {...member}/>
-          })}
+          {members.map((member) => 
+            <MemberCard key={member.name} {...member}/>
+          )}
         </div>
       </div>
 
