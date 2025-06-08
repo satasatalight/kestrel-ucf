@@ -44,19 +44,22 @@ const NavBarLink = ({ label, href, isNewWindow }: Props) => {
             className="z-9999"
           >
             <DropdownMenuItem asChild>
-              <Link href="/teams/sensors">Sensors</Link>
+              <Link href="/teams/embedded">Embedded</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
               <Link href="/teams/pathing">Pathing</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link href="/teams/ardupilot">Ardupilot</Link>
+              <Link href="/teams/hardware">Hardware</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
               <Link href="/teams/model">Model</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
               <Link href="/teams/leadership">Leadership</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href="/teams/simulation">Simulation</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
               <Link href="/teams/website">Website</Link>

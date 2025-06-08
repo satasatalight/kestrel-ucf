@@ -5,10 +5,10 @@ import TeamCard, { TeamCardProps } from "./_components/TeamCard";
 const TeamsPage = () => {
   const cards: TeamCardProps[] = [
     {
-      title: "Sensors Team",
+      title: "Embedded Team",
       description: "placeholder description",
       image: placeholder,
-      link: "/teams/sensors"
+      link: "/teams/embedded"
     },
     {
       title: "Pathing Team",
@@ -17,10 +17,10 @@ const TeamsPage = () => {
       link: "/teams/pathing"
     },
     {
-      title: "Ardupilot Team",
+      title: "Hardware Team",
       description: "placeholder description",
       image: placeholder,
-      link: "/teams/ardupilot"
+      link: "/teams/hardware"
     },
     {
       title: "Model Team",
@@ -33,6 +33,12 @@ const TeamsPage = () => {
       description: "placeholder description",
       image: placeholder,
       link: "/teams/leadership"
+    },
+    {
+      title: "Simulation Team",
+      description: "sdsd",
+      image: placeholder,
+      link: "/teams/simulation"
     },
     {
       title: "Website Team",

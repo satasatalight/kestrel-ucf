@@ -45,7 +45,7 @@ const SensorsTeamPage = () => {
 
   return <div className="bg-gradient-to-t from-slate-700 to-slate-900 text-neutral-200 h-[100vh]">
     <h1 className="pt-20 text-5xl text-center font-bold font-mono">
-      Kestrel's Sensors Team
+      Kestrel's Embedded Software Team
     </h1>
 
     <div className="container mx-auto max-w-5xl">
