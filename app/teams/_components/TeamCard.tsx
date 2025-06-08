@@ -18,7 +18,7 @@ export interface TeamCardProps{
 
 const TeamCard = ({ title, description, image, link}: TeamCardProps) => {
     return(
-        <Card className = "w-full max-w-xs bg-purple-950 border-gray-900 hover:scale-102 hover:shadow-xl transition-transform">
+        <Card className = "w-full max-w-xs bg-slate-600 border-slate-700 hover:scale-102 hover:shadow-xl transition-transform">
             <CardHeader>
                 <Image
                     className = "rounded-lg mb-4 shadow-md transition-all duration-300"
