@@ -56,7 +56,7 @@ const TeamsPage = () => {
         Description placeholder
       </p>
       <div className="flex justify-center items-center">
-        <div className="flex flex-wrap w-full py-10 max-w-5xl gap-8">
+        <div className="flex flex-wrap w-full py-10 max-w-[90rem] gap-8 justify-center items-center">
           {cards.map((card) => (
             <TeamCard key={card.title} {...card}/>
           ))}
