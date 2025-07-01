@@ -5,7 +5,7 @@ import members from "./members"
 const SensorsTeamPage = () => {
   return <div className="bg-gradient-to-t from-slate-700 to-slate-900 text-neutral-200">
     <h1 className="pt-20 text-5xl text-center font-bold font-mono">
-      Kestrel's Embedded Software Team
+      Kestrel's Website Development Team
     </h1>
 
     <div className="container mx-auto max-w-5xl">
